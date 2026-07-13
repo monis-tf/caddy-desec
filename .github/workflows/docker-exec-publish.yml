@@ -7,7 +7,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '5 1 * * *'
+    - cron: '0 11 * * 2'
   push:
     branches: [ "main" ]
     # Publish semver tags as releases.
@@ -72,7 +72,7 @@ jobs:
           file: Dockerfile-exec
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:exec-latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-exec
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
