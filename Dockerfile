@@ -1,8 +1,6 @@
 FROM docker.io/caddy:builder AS builder
 
-RUN --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache/go-build \
-    xcaddy build \
+RUN xcaddy build \
     --with github.com/caddy-dns/desec
 
 FROM docker.io/caddy:latest
