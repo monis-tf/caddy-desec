@@ -4,7 +4,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     xcaddy build \
     --with github.com/caddy-dns/desec \
-    --with https://github.com/sablierapp/sablier-caddy-plugin
+    --with github.com/sablierapp/sablier-caddy-plugin
 
 FROM docker.io/caddy:latest
 
