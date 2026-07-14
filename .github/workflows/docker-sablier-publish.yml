@@ -69,7 +69,7 @@ jobs:
         with:
           provenance: false
           context: .
-          file: Dockerfile-exec
+          file: Dockerfile-sablier
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-sablier
