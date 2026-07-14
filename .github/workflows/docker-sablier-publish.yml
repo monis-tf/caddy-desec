@@ -72,7 +72,7 @@ jobs:
           file: Dockerfile-exec
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-exec
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-sablier
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
