@@ -12,6 +12,8 @@ on:
     branches: [ "main" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
+    paths:
+     - 'Dockerfile'
   pull_request:
     branches: [ "main" ]
 
@@ -69,6 +71,7 @@ jobs:
         with:
           provenance: false
           context: .
+          file: Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           platforms: linux/amd64,linux/arm64
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
