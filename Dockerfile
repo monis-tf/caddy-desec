@@ -1,8 +1,7 @@
 FROM docker.io/caddy:builder AS builder
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/desec \
-    --with github.com/caddyserver/certmagic@v0.25.4
+    --with github.com/caddy-dns/desec
 
 FROM docker.io/caddy:latest
 
